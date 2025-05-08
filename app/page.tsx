@@ -10,6 +10,7 @@ import TestimonialCard from "@/components/testimonial-card"
 import ToolsAndTechnologies from "@/components/toolsandtechnologies"
 import Hero from "@/components/hero"
 import Navbar from "@/components/navbar"
+import TestimonialCarousel from "@/components/testimonial"
 
 const testimonials = [
   {
@@ -68,13 +69,77 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <main>
         {/* Hero Section - Inspired by the e-learning design */}
+
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary-light/30 to-primary/10 pt-32 pb-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-left">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary-dark leading-tight">
+                  Develop your <span className="text-primary">skills</span> in a new and unique way
+                </h1>
+                <p className="text-lg md:text-xl text-neutral-700 mb-8 max-w-lg">
+                  From websites to workshops, I help you establish your online presence and grow your technical skills.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link href="/services">
+                    <Button size="lg" className="rounded-full px-8 py-6 text-lg btn-primary">
+                      Explore Services
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="rounded-full px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-white"
+                    >
+                      Contact Me
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Stats */}
+                <div className="flex gap-8 mt-12">
+                  <div>
+                    <p className="text-3xl font-bold text-primary">20+</p>
+                    <p className="text-neutral-700">Projects</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-primary">50+</p>
+                    <p className="text-neutral-700">Students</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-bold text-primary">5+</p>
+                    <p className="text-neutral-700">Years</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="relative z-10 rounded-3xl overflow-hidden shadow-xl">
+                  <Image
+                    src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1746615434/IMG_20240322_054025_091-EDIT_yutoev.jpg"
+                    alt="Developer working"
+                    width={500}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute top-1/4 -left-8 w-16 h-16 bg-accent-yellow rounded-full opacity-70"></div>
+                <div className="absolute bottom-1/4 -right-8 w-24 h-24 bg-primary-light rounded-full opacity-50"></div>
+                <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-accent-orange rounded-full opacity-60"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
           <div >
             <Hero />
           </div>
         
 
         {/* Partners/Tools Section */}
-        <section className="py-10 bg-white border-b border-neutral-200">
+        <section className=" bg-white border-b border-neutral-200">
           {/* <div className="container mx-auto px-4">
             <p className="text-center text-neutral-500 mb-6">Tools & Technologies I Work With</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -413,7 +478,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-neutral-100">
+        {/* <section className="py-20 bg-neutral-100">
           <div className="container mx-auto px-4">
             <h2 className="section-heading">Client Testimonials</h2>
             <p className="section-subheading">Here's what people are saying about working with me</p>
@@ -424,18 +489,22 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
+        {/* Testimonial Carousel Section */}
+        <TestimonialCarousel/>
 
         {/* CTA Section */}
-        <section className="py-20 accent-gradient text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-20 accent-gradient text-white relative">
+          {/* Large white shadow at the top */}
+          <div className="absolute top-0 left-0 w-full h-10 bg-white shadow-lg rounded-b-3xl opacity-80 blur-md"></div>
+          <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-lg mb-10 max-w-2xl mx-auto">
               Let's work together to bring your ideas to life. Contact me today to discuss your project.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-white text-primary-dark hover:bg-neutral-100 rounded-full px-8">
-                Get in Touch
+              <Button size="lg" className="bg-white text-primary-dark hover:bg-primary-dark hover:text-white rounded-full px-8">
+          Get in Touch
               </Button>
             </Link>
           </div>

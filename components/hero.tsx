@@ -109,15 +109,15 @@ export default function Hero () {
         {/* Stats section */}
         <div className="flex justify-center gap-16 mt-24">
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">20+</p>
+            <p className="text-3xl font-bold text-primary">10+</p>
             <p className="text-neutral-700">Projects</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">50+</p>
+            <p className="text-3xl font-bold text-primary">20+</p>
             <p className="text-neutral-700">Students</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">5+</p>
+            <p className="text-3xl font-bold text-primary">3+</p>
             <p className="text-neutral-700">Years</p>
           </div>
         </div>
