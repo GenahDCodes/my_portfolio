@@ -70,68 +70,7 @@ export default function Home() {
       <main>
         {/* Hero Section - Inspired by the e-learning design */}
 
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary-light/30 to-primary/10 pt-32 pb-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary-dark leading-tight">
-                  Develop your <span className="text-primary">skills</span> in a new and unique way
-                </h1>
-                <p className="text-lg md:text-xl text-neutral-700 mb-8 max-w-lg">
-                  From websites to workshops, I help you establish your online presence and grow your technical skills.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/services">
-                    <Button size="lg" className="rounded-full px-8 py-6 text-lg btn-primary">
-                      Explore Services
-                    </Button>
-                  </Link>
-                  <Link href="/contact">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-white"
-                    >
-                      Contact Me
-                    </Button>
-                  </Link>
-                </div>
-
-                {/* Stats */}
-                <div className="flex gap-8 mt-12">
-                  <div>
-                    <p className="text-3xl font-bold text-primary">20+</p>
-                    <p className="text-neutral-700">Projects</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-primary">50+</p>
-                    <p className="text-neutral-700">Students</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-primary">5+</p>
-                    <p className="text-neutral-700">Years</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="relative z-10 rounded-3xl overflow-hidden shadow-xl">
-                  <Image
-                    src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1746615434/IMG_20240322_054025_091-EDIT_yutoev.jpg"
-                    alt="Developer working"
-                    width={500}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                {/* Decorative elements */}
-                <div className="absolute top-1/4 -left-8 w-16 h-16 bg-accent-yellow rounded-full opacity-70"></div>
-                <div className="absolute bottom-1/4 -right-8 w-24 h-24 bg-primary-light rounded-full opacity-50"></div>
-                <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-accent-orange rounded-full opacity-60"></div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
           <div >
             <Hero />

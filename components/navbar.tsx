@@ -10,7 +10,7 @@ import Image from "next/image"
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Career", href: "/career" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Community", href: "/community" },
   { name: "Services", href: "/services" },
   { name: "Blog", href: "/blog" },

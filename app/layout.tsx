@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "Muhammed Aminu Umar",
   description: "Portfolio showcasing web development, Arduino workshops, and digital services",
-  
 }
 
 export default function RootLayout({
@@ -20,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Navbar />
