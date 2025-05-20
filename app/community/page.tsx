@@ -1,14 +1,10 @@
-import Community from "@/components/community"
+import CommunityPage from "./CommunityPage";
 
 export const metadata = {
   title: "Community Involvement | Your Name",
-  description: "Learn about my community involvement, workshops, and educational initiatives.",
+  description: "Connect, collaborate, and change the world with our community initiatives and outreach programs.",
 }
 
-export default function CommunityPage() {
-  return (
-    <div className="min-h-screen bg-white pt-20">
-      <Community />
-    </div>
-  )
+export default function Page() {
+  return <CommunityPage />
 }
