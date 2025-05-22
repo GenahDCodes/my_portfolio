@@ -25,12 +25,12 @@ export default function Hero () {
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a 
-              href="/services" 
+              href="/portfolio" 
               className="rounded-full inline-block"
             >
               <Button 
                 size="lg" 
-                className="rounded-full"
+                className="rounded-full bg-primary text-white hover:bg-primary-dark"
               >
                 Services
               </Button>
@@ -42,7 +42,7 @@ export default function Hero () {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="rounded-full"
+                className="rounded-full border-primary text-primary hover:bg-primary-light hover:text-primary-dark"
               >
                 Contact Me
               </Button>

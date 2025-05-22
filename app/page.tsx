@@ -402,7 +402,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <Link href="/blog">
                 <Button
                   variant="outline"
@@ -412,7 +412,7 @@ export default function Home() {
                   View All Articles <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
 
