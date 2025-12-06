@@ -20,32 +20,15 @@ export default function Hero () {
             Muhammed <span className="text-primary">Aminu</span> Umar
           </h1>
           <p className="text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto">
-            Websites. Workshops. Winning strategies. Let's bring your tech ideas to life.
+           I build powerful web products, manage digital platforms, and drive communities through technology.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a 
-              href="/portfolio" 
-              className="rounded-full inline-block"
-            >
-              <Button 
-                size="lg" 
-                className="rounded-full bg-primary text-white hover:bg-primary-dark"
-              >
-                Services
-              </Button>
+            <a href="/portfolio" className="rounded-full inline-block">
+              <Button size="lg" className="rounded-full bg-primary text-white hover:bg-primary-dark">View My Work</Button>
             </a>
-            <a 
-              href="/contact" 
-              className="rounded-full inline-block"
-            >
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="rounded-full border-primary text-primary hover:bg-primary-light hover:text-primary-dark"
-              >
-                Contact Me
-              </Button>
+            <a href="/contact" className="rounded-full inline-block">
+              <Button variant="outline" size="lg" className="rounded-full border-primary text-primary hover:bg-primary-light hover:text-primary-dark">Hire Me</Button>
             </a>
             
           </div>
@@ -109,16 +92,16 @@ export default function Hero () {
         {/* Stats section */}
         <div className="flex justify-center gap-16 mt-24">
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">10+</p>
+            <p className="text-3xl font-bold text-primary">15+</p>
             <p className="text-neutral-700">Projects</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">20+</p>
-            <p className="text-neutral-700">Students</p>
+            <p className="text-3xl font-bold text-primary">480+</p>
+            <p className="text-neutral-700">Community members</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">3+</p>
-            <p className="text-neutral-700">Years</p>
+            <p className="text-3xl font-bold text-primary">1,000+</p>
+            <p className="text-neutral-700">Opportunities shared</p>
           </div>
         </div>
       </div>

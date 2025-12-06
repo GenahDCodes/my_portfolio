@@ -1,0 +1,126 @@
+Muhammed Aminu Umar
+❖ www.linkedin.com/in/aminu-umar-0356a5288 ❖ https://github.com/Aminu8627
+❖ Github ❖my portfolio
+EDUCATION
+University – University of Ghana, Legon Level 300
+Major: Computer Science
+Relevant Coursework: Programming, Website development(HTML,CSS, React), Mobile App
+Development (React Native) Software Engineering (Agile Methodology), System Administration, Office
+productivity, Research Methods and Product Management
+EXPERIENCE
+● Backend Engineer & Product Manager Intern – iSupreme Labs
+Remote | April 2025 – Date
+Product Manager for Intelex and Connect by iSupreme, overseeing feature definition and market
+positioning.
+● Developed user personas, user stories, and feature requirements.
+● Conducted market and competitor research to guide product strategy.
+● Collaborated with developers to design user interfaces and backend logic, also serving as QA
+tester.
+● Authored user manuals to improve onboarding and product usability.
+● Designed go-to-market strategy, marketing funnels, and content calendars.
+● Tools: ChatGPT, Airtable, Miro, Figma, VS Code, Loom, Napkin.ai, Slack, Google Meet.
+● Backend Developer – Product Miners (under iSupreme Labs)
+● Collaborated with team to brainstorm solutions for challenges in the marketing industry.
+● Built a WordPress plugin, implementing both the UI and backend logic.
+
+-- 1 of 4 --
+
+● Handled uploading and publishing of the plugin to the WordPress plugin marketplace.
+Community Lead – 3C Opportunity Hub
+Remote | Oct 2024 – Date
+• Built and manage a WhatsApp community of 480+ students and early professionals.
+• Shared over 1,000 opportunities to support youth development in career, education, and personal
+growth.
+• Organized four webinars and secured two partnership collaborations to deliver high-value
+sessions.
+Technical Support Officer – Aldin Cycles
+Onsite, Legon Campus | June 2025 – Aug 2025
+• Monitor ongoing rides and provide technical assistance to users and riders.
+• Train learners on how to ride bikes, ensuring safety and confidence.
+• Deliver customer service support, resolving user issues and inquiries.
+• Propose and implement ideas to improve the system and enhance rider experiences.
+Community Member – Techies4Impact
+Remote | Jun 2024 – Aug 2025
+• Assisted in organizing the “Jazz and Bytes” tech networking event to foster collaboration among
+young innovators.
+• Worked with the team to close the digital opportunity gap by providing digital training
+equipment to Narkwa D/A JHS (project 60% complete).
+Social Media Manager – Creative Enterprise Forum (CEF)
+Remote | July 2025 – Date
+• Create content calendars, draft captions, and manage posts across Instagram, Facebook,
+LinkedIn, TikTok, and Twitter.
+• Build the online presence of CEF by increasing engagement and visibility.
+• Participate in strategic team discussions, introducing ideas such as pre- and post-event activities
+to improve the overall CEF experience.
+Campus Ambassador – Lead For Ghana)
+Hybrid | Nov 2024 – Date
+• Propagate the mission and vision of Lead For Ghana across the university community.
+
+-- 2 of 4 --
+
+• Collaborate with fellow ambassadors to design strategies for onboarding students into the Lead
+For Ghana Fellowship Program.
+Junior Frontend Developer – Afrovivo
+Remote | Jan 2024 – Date
+• Built responsive Login, Register, and Dashboard pages using React and Tailwind CSS.
+• Ensured seamless cross-device user experience.
+• Hosted Afrovivo’s “Time with the Creatives” program, supporting creative engagement.
+Technical Lead – Afrikan STEM Force
+Hybrid | Jan 2025 – Date
+• Oversee technical operations including website design and updates.
+• Develop STEM-focused curriculum for facilitators across partner schools.
+• Support the media team in planning and executing social media campaigns and STEM
+awareness content.
+Intern – Royal Priesthood Academy
+Onsite, Amasaman | Feb 2024 – May 2024
+• Assisted accountants with daily financial tasks (receiving payments, preparing daily accounts).
+• Supported school management with administrative duties including letter writing and student
+records.
+• Taught ICT to JHS students, covering Programming and Excel.
+Team Lead – The Phantom Troupe (Software Engineering Project)
+Onsite, University of Ghana | May 2024 – Aug 2024
+• Led a team in building a software solution for Yak Computers.
+• Coordinated meetings, monitored daily standups, and reviewed sprints.
+• Represented the team in client meetings and submitted weekly deliverables.
+• Developed a responsive and intuitive frontend for the system.
+Team Member – United Ummah
+Kasoa | Oct 2022 – Date
+• Helped plan and execute a donation outreach to Home of Taqwa Orphanage in Dodowa.
+• Supported the organization of an Islamic lecture for the Kasoa Tuba community, promoting
+Islamic values and moral development
+
+-- 3 of 4 --
+
+PROJECTS
+Computer Science Department Website Project Link
+Developed a computer science website using html and CSS. It includes an admission, about us,
+profile and contact us pages.
+Grading System Project Link
+● Developed a comprehensive grading system using React.js. Implemented features for grade input,
+calculation, and reporting.
+Mobile Apps UI Project Link
+● Built some UI using react-native and utilizing concepts like components, assync storage, routing, etc.
+Yak-Computers Website Project Link
+● Built the frontend for Yak Computer’s e-commerce website using react. Utilized concepts like
+routing, merging with the backend, using assync functions and promises.
+Intelex & Connect (iSupreme Labs)
+• As Product Manager, led feature definition, market research, and competitor analysis.
+• Collaborated with developers to implement features and conducted QA testing for product stability.
+• Created user manuals and go-to-market strategies to support product adoption.
+Pyramid Plugin (Product Miners)
+• Co-created a plugin for marketers to streamline workflow, implementing both UI and backend logic.
+• Managed deployment to the WordPress Plugin Marketplace, ensuring compliance with submission
+standards.
+SKILLS
+Programming & Development: JavaScript, Python, Java, React.js, React Native, HTML, CSS, Tailwind CSS,
+WordPress, REST APIs
+Product Management & Strategy: Product Roadmapping, User Personas, User Stories, Market Research,
+Competitor Analysis, Go-to-Market Strategy, Content Calendar Planning, Marketing Funnels
+Tools & Platforms: Git, GitHub, VS Code, Airtable, Miro, Figma, Canva, Loom, Slack, Google Workspace, Trello,
+Napkin.ai
+Productivity Tools: Microsoft Word, Excel, PowerPoint, Access, Teams
+Soft Skills: Leadership, Problem-Solving, Customer Service, Team Collaboration, Time Management, Public
+Speaking, Critical Thinking, Communication
+
+-- 4 of 4 --
+

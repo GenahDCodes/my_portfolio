@@ -1,453 +1,220 @@
+import React from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Search, CheckCircle, Award, Clock, Users, BookOpen } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { services } from "@/components/services"
-import { blogPosts } from "@/components/blog"
-import { Input } from "@/components/ui/input"
-import Image from "next/image"
-import TestimonialCard from "@/components/testimonial-card"
-import ToolsAndTechnologies from "@/components/toolsandtechnologies"
 import Hero from "@/components/hero"
-import Navbar from "@/components/navbar"
 import TestimonialCarousel from "@/components/testimonial"
+import Footer from "@/components/footer"
+import WhatIDoShowcase from "@/components/what-i-do-showcase"
+import AboutSnapshot from "@/components/about-snapshot"
+import FeaturedProjects from "@/components/featured-projects"
+import CommunityCTA from "@/components/community-cta"
 
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Startup Founder",
-    content:
-      "Working with this developer was a game-changer for my business. The website exceeded my expectations and has helped me attract new clients.",
-    avatar: "/placeholder.svg?height=50&width=50",
-  },
-  {
-    name: "Michael Chen",
-    role: "Small Business Owner",
-    content:
-      "The Arduino workshop was incredibly helpful. I learned so much in just a few hours and was able to implement what I learned right away.",
-    avatar: "/placeholder.svg?height=50&width=50",
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Marketing Director",
-    content:
-      "The product sprint helped us clarify our vision and create a roadmap that the whole team could get behind. Highly recommended!",
-    avatar: "/placeholder.svg?height=50&width=50",
-  },
-]
-
-const benefits = [
-  {
-    title: "Professional Websites",
-    description: "Get a responsive, SEO-optimized website that represents your brand",
-    icon: <Award className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "Quick Turnaround",
-    description: "Projects completed efficiently without sacrificing quality",
-    icon: <Clock className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "Hands-on Workshops",
-    description: "Learn technical skills through interactive, practical sessions",
-    icon: <Users className="h-6 w-6 text-primary" />,
-  },
-  {
-    title: "Ongoing Support",
-    description: "Get help and guidance even after your project is complete",
-    icon: <BookOpen className="h-6 w-6 text-primary" />,
-  },
-]
+import Image from "next/image"
 
 export default function Home() {
-  // Featured services (show only 3)
-  const featuredServices = services.slice(0, 3)
-  // Latest blog posts (show only 2)
-  const latestPosts = blogPosts.slice(0, 2)
+  const featured = [
+    { title: "Yak Computers Website", slug: "yak-computers", role: "Lead Frontend", desc: "E-commerce frontend built with React; routing and async data flows." },
+    { title: "Grading System App", slug: "grading-system", role: "Fullstack/Frontend", desc: "Teacher-focused grading and reporting system built with React." },
+    { title: "Intelex & Connect", slug: "intelex", role: "Product Manager", desc: "Product discovery and GTM for enterprise features." },
+  ]
+
+  const whatIDo = [
+    { title: "Product Management & Strategy", href: "/portfolio", desc: "I manage products from ideas to launch, turning concepts into real solutions." },
+    { title: "Web & App Development", href: "/portfolio", desc: "I build responsive websites and web apps with polished UI/UX that users love." },
+    { title: "STEM Training & Workshops", href: "/portfolio", desc: "I create Arduino and embedded projects and teach students practical STEM skills." },
+    { title: "Digital Media & Community Leadership", href: "/portfolio", desc: "I design visual content, manage social platforms, and lead communities and events that make an impact." },
+  ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       <main>
-        {/* Hero Section - Inspired by the e-learning design */}
+        <Hero />
 
-        
+        <AboutSnapshot />
 
-          <div >
-            <Hero />
-          </div>
-        
+        <WhatIDoShowcase
+          items={whatIDo.map((w, i) => ({
+            title: w.title,
+            desc: w.desc,
+            image: [
+              // 0 -> Product Management & Strategy
+              "https://res.cloudinary.com/dfxjwtw86/image/upload/v1747761640/WhatsApp_Image_2025-05-13_at_06.52.14_9508a1be_rdmxj9.jpg",
+              // 1 -> Web & App Development
+              "https://res.cloudinary.com/dfxjwtw86/image/upload/v1747752713/Community_Logo_1_l83akb.png",
+              // 2 -> STEM Training & Workshops
+              "https://res.cloudinary.com/dfxjwtw86/image/upload/v1746652197/IMG_7935_bc6lsr.jpg",
+              // 3 -> Digital Media & Community Leadership
+              "https://res.cloudinary.com/dfxjwtw86/image/upload/v1763932778/Purple_and_Black_Elegant_Business_Pitch_Deck_Presentation_Laptop_Mockup_Instagram_Post_izfcen.png",
+            ][i],
+          }))}
+        />
 
-        {/* Partners/Tools Section */}
-        <section className=" bg-white border-b border-neutral-200">
-          {/* <div className="container mx-auto px-4">
-            <p className="text-center text-neutral-500 mb-6">Tools & Technologies I Work With</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              <div className="text-neutral-400 hover:text-primary transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                  <polyline points="13 2 13 9 20 9"></polyline>
-                </svg>
-              </div>
-              <div className="text-neutral-400 hover:text-primary transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-                  <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-                  <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-                  <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-                  <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-                  <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-                </svg>
-              </div>
-              <div className="text-neutral-400 hover:text-primary transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-              </div>
-              <div className="text-neutral-400 hover:text-primary transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                  <path d="M2 2l7.586 7.586"></path>
-                  <circle cx="11" cy="11" r="2"></circle>
-                </svg>
-              </div>
-              <div className="text-neutral-400 hover:text-primary transition-colors">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-            </div>
-          </div> */}
-          <ToolsAndTechnologies />
-        </section>
+        {/* 4. Featured Work */}
+        <FeaturedProjects
+          projects={[
+            {
+              title: "Intelex",
+              slug: "intelex",
+              role: "Product Manager",
+              desc: "Product discovery and feature delivery for an enterprise collaboration product.",
+              image: "https://res.cloudinary.com/dfxjwtw86/image/upload/v1764964607/17f5fd41-3c04-4f77-98d3-8395fa43f386.png",
+            },
+            {
+              title: "CEF 2025",
+              slug: "cef",
+              role: "Social Media Manager",
+              desc: "Social media manager and core team member for the CEF 2025",
+              image: "https://res.cloudinary.com/dfxjwtw86/image/upload/v1764970220/BAVP1100_lpvmmm.jpg",
+            },
+            {
+              title: "My Portfolio Website",
+              slug: "portfolio",
+              role: "Developer",
+              desc: "Personal portfolio website showcasing projects and skills.",
+              image: "https://res.cloudinary.com/dfxjwtw86/image/upload/v1747346337/f7f03bdd-330f-4925-a80c-a11bdfe4f998.png",
+            },
+            {
+              title: "Brochure Designs",
+              slug: "brochure-design",
+              role: "Designer",
+              desc: "Brochures designed by me.",
+              image: "https://res.cloudinary.com/dfxjwtw86/image/upload/v1764973422/db6ee5fe-3787-4026-a6c9-b584c0c5bb61.png",
+            },
+          ]}
+        />
 
-         {/* Certified Professional Section */}
-    
-    <section className="py-16 bg-primary-light/10">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden shadow-xl max-w-5xl mx-auto border border-gray-100">
-          {/* Left column - Content */}
-          <div className="md:w-3/5 p-8 md:p-10">
-            <h2 className="text-4xl font-bold text-primary mb-1">What I Do?</h2>
-            {/* <p className="text-neutral-600 mb-6 inline-block border-b-2 border-primary pb-1">About Me</p> */}
-            
-            <p className="text-neutral-600 mb-8">
-              With hands-on expertise in web development, product management, and Arduino programming, 
-              I deliver real-world solutions tailored to your needs. Passionate about creating innovative 
-              solutions that make a difference.
-            </p>
-            
-            <div className="space-y-6 mb-8">
-              {/* Education Section */}
-              <div className="flex items-center">
-             
-                <div>
-                  <p className="font-medium text-primary-dark">Fullstack Web Development</p>
-                  <p className="text-neutral-600 text-sm">Building responsive, SEO-friendly sites and MVPs using React, Next.js, Node.js, and modern deployment workflows</p>
-                </div>
-              </div>
-              
-              {/* Experience Section */}
-              <div className="flex items-center">
-                
-                <div>
-                  <p className="font-medium text-primary-dark">Product Management</p>
-                  <p className="text-neutral-600 text-sm">Applying agile methodologies and rapid-fire sprints to research, plan, and prototype products that align with your goals.</p>
-                </div>
-              </div>
-              
-              {/* Skills Section */}
-              <div className="flex items-center">
-                <div>
-                  <p className="font-medium text-primary-dark">Arduino & Embedded Systems</p>
-                  <p className="text-neutral-600 text-sm">Guiding hands-on workshops that teach you how to assemble, program, and deploy sensor-actuator projects from scratch.</p>
-                </div>
-              </div>
-            </div>
-            
-            <Link href="/contact" className="inline-block bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors shadow-md">
-              Contact Me Today
-            </Link>
-          </div>
-
-          {/* Right column - Photo with decorative elements */}
-          <div className="md:w-2/5 relative bg-gradient-to-br from-primary-light/20 to-primary-light/5">
-            <div className="h-full flex items-center justify-center p-6">
-              <div className="relative z-10">
-                <div className="rounded-2xl overflow-hidden border-4 border-white shadow-lg">
-                  <Image
-                    src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1746619610/_YAZ3284_fzokug.jpg"
-                    alt="Professional portrait"
-                    width={400}
-                    height={500}
-                    className="w-full h-auto"
-                  />
-                </div>
-                
-                {/* Skills badges */}
-                <div className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-full shadow-md border border-gray-100">
-                  <p className="text-primary font-medium text-sm">Web Development</p>
-                </div>
-                
-                <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full shadow-md border border-gray-100">
-                  <p className="text-primary font-medium text-sm">Arduino Expert</p>
-                </div>
-                
-                <div className="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-full shadow-md border border-gray-100">
-                  <p className="text-primary font-medium text-sm">Product Manager</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative circles */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full translate-x-1/2 -translate-y-1/3"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-accent-yellow/20 rounded-full -translate-x-1/3 translate-y-1/4"></div>
-            <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-         {/* Benefits Section */}
-         <section className="py-16 bg-neutral-100">
+        {/* 5. Experience & Impact — refined layout inspired by design */}
+        <section className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="section-heading">Benefits of Working With Me</h2>
-            <p className="section-subheading">Get professional results with a personalized approach</p>
+            <div className="mx-auto max-w-6xl bg-gradient-to-br from-primary/20 via-primary-light/30 to-accent-yellow/10 rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-center text-primary-dark mb-8">Measuring Success and Improving User Engagement</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200 card-hover">
-                  <div className="icon-container inline-flex mb-4">{benefit.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary-dark">{benefit.title}</h3>
-                  <p className="text-neutral-700">{benefit.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-primary">480+</div>
+                  <div className="text-sm text-neutral-700 mt-1">Community Members</div>
                 </div>
-              ))}
+
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-accent-yellow">1,000+</div>
+                  <div className="text-sm text-neutral-700 mt-1">Opportunities Shared</div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-primary">4</div>
+                  <div className="text-sm text-neutral-700 mt-1">Webinars Held</div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-primary-dark">60%</div>
+                  <div className="text-sm text-neutral-700 mt-1">Digital Access Project Progress</div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-primary">Multiple</div>
+                  <div className="text-sm text-neutral-700 mt-1">Platforms Developed</div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100 text-center">
+                  <div className="text-3xl font-extrabold text-primary">6+</div>
+                  <div className="text-sm text-neutral-700 mt-1">Projects Delivered</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Search Services Section */}
-        {/* <section className="py-16 bg-white">
+        {/* 6. Organizations marquee (replaces Skills & Expertise) */}
+        <section className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="section-heading">Find the Right Service</h2>
-            <div className="max-w-2xl mx-auto">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" />
-                <Input
-                  type="text"
-                  placeholder="Search for services..."
-                  className="pl-10 py-6 rounded-full border-neutral-300 focus:border-primary focus:ring-primary"
-                />
-                <Button className="absolute right-1 top-1/2 transform -translate-y-1/2 rounded-full btn-primary">
-                  Search
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section> */}
+            <h2 className="text-2xl font-semibold text-primary-dark mb-6 text-center">Organizations I’ve Worked With</h2>
 
-       
+            {/* horizontal marquee below — vertical version removed */}
+              <div className="mx-auto max-w-4xl bg-white/30 rounded-2xl p-6 flex items-center justify-center">
+                <div className="w-full overflow-hidden h-24">
+                  {/* horizontal marquee wrapper */}
+                  <div className="marquee-row flex items-center space-x-8" style={{willChange: 'transform'}}>
+                    {/* logos (set repeated to enable seamless loop) */}
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685256/photo_2025-12-02_14-20-32_aqujme.jpg" alt="Yak Computers" className="h-12 object-contain" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685451/3519108_th1_afh5xq.jpg" alt="Grading System" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1745454994/iot_network_hub_logo_zge0zv.jpg" alt="Intelex" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685590/images_xewoh8.png" alt="Pyramid Plugin" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685723/czjno8Ah_400x400_pslgxl.jpg" alt="Partner B" className="h-12 object-contain opacity-80" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685852/images_1_cyghyx.jpg" alt="Yak Computers" className="h-12 object-contain" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764685954/CEF_Theme_Logo_uxognw.png" alt="Grading System" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764686022/download_4_bs9rhm.jpg" alt="Intelex" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764686100/images_2_a19a83.jpg" alt="Pyramid Plugin" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1764686152/download_6_mxbzpb.jpg" alt="Partner A" className="h-12 object-contain opacity-80" />
 
-        {/* Featured Services Section */}
-        {/* <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="section-heading">Featured Services</h2>
-            <p className="section-subheading">
-              Professional solutions tailored to help you grow your online presence and technical skills.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {featuredServices.map((service, index) => (
-                <Card
-                  key={index}
-                  className="flex flex-col h-full border border-neutral-300 rounded-xl overflow-hidden card-hover"
-                >
-                  <div className="h-48 bg-neutral-200 relative overflow-hidden">
-                    <img
-                      src={service.image || "/placeholder.svg?height=200&width=300"}
-                      alt={`${service.title} preview`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 right-4 accent-gradient text-white text-sm font-medium py-1 px-3 rounded-full">
-                      {service.price.split("\n")[0]}
-                    </div>
+                    {/* repeated for seamless scroll */}
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1747752713/Community_Logo_1_l83akb.png" alt="Yak Computers" className="h-12 object-contain" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1746619610/_YAZ3284_fzokug.jpg" alt="Grading System" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1746652197/IMG_7935_bc6lsr.jpg" alt="Intelex" className="h-12 object-contain rounded" />
+                    <img src="https://res.cloudinary.com/dfxjwtw86/image/upload/v1763932778/Purple_and_Black_Elegant_Business_Pitch_Deck_Presentation_Laptop_Mockup_Instagram_Post_izfcen.png" alt="Pyramid Plugin" className="h-12 object-contain rounded" />
+                    <img src="/logo-placeholder.png" alt="Partner A" className="h-12 object-contain opacity-80" />
+                    <img src="/logo-placeholder.png" alt="Partner B" className="h-12 object-contain opacity-80" />
                   </div>
-                  <CardHeader>
-                    <div className="flex items-center mb-2">
-                      <div className="icon-container mr-3">{service.icon}</div>
-                      <CardTitle className="text-xl text-primary-dark">{service.title}</CardTitle>
-                    </div>
-                    <CardDescription className="text-neutral-700">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="space-y-2">
-                      {service.deliverables.slice(0, 2).map((item, i) => (
-                        <li key={i} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
-                          <span className="text-neutral-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    <Link href={`/services#${service.slug}`} className="w-full">
-                      <Button className="w-full btn-primary">Learn More</Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
+                </div>
+              </div>
 
-            <div className="text-center mt-12">
-              <Link href="/services">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-white"
-                >
-                  View All Services <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              {/* inline styles for marquee animation and reduced-motion handling */}
+              <style>{`
+                @keyframes marquee-horizontal {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+                .marquee-row {
+                  display: flex;
+                  gap: 2rem;
+                  align-items: center;
+                  animation: marquee-horizontal 18s linear infinite;
+                  will-change: transform;
+                }
+                .marquee-row img {
+                  height: 48px;
+                  width: auto;
+                }
+                @media (prefers-reduced-motion: reduce) {
+                  .marquee-row { animation: none; }
+                }
+              `}</style>
+          </div>
+        </section>
+
+        {/* 7. Testimonials / Social Proof */}
+        <section className="py-12 bg-neutral-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-semibold text-primary-dark mb-6">Testimonials & Partners</h2>
+            <TestimonialCarousel />
+          </div>
+        </section>
+
+        {/* 8. Current Focus */}
+        {/* <section className="py-12">
+          <div className="container mx-auto px-4">
+            <h2 className="text-2xl font-semibold text-primary-dark mb-4">Current Focus</h2>
+            <p className="text-neutral-700 mb-4">Building product experiences and community pipelines — currently focused on Intelex (product discovery) and scaling 3C Opportunity Hub.</p>
+            <div className="flex gap-4">
+              <Link href="/portfolio/intelex" className="inline-block bg-white border px-4 py-2 rounded-lg">Intelex — case study</Link>
+              <Link href="/community" className="inline-block bg-primary text-white px-4 py-2 rounded-lg">3C Opportunity Hub</Link>
             </div>
           </div>
         </section> */}
 
-       
-
-        {/* Latest Blog Posts Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="section-heading">My Posts</h2>
-            <p className="section-subheading">Insights and tutorials on technology, design, and product development.</p>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto ">
-              {latestPosts.map((post, index) => (
-                <Card
-                  key={index}
-                  className="flex flex-col h-full border border-neutral-300 rounded-xl overflow-hidden card-hover bg-gray-900"
-                >
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-xl text-primary">{post.title}</CardTitle>
-                    <p className="text-sm text-neutral-500">{post.date}</p>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <CardDescription className="text-white/80 mb-4">{post.excerpt}</CardDescription>
-                  </CardContent>
-                  <CardFooter className="pt-0">
-                    {/* <Link href={`/blog/${post.slug}`} className="w-full"> */}
-                    <Link href={post.bloglink} target="_blank" className="w-full">
-                      <Button
-                        variant="outline"
-                        className="w-full border-primary text-primary hover:bg-primary hover:text-white"
-                      >
-                        Read Article
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-
-            {/* <div className="text-center mt-12">
-              <Link href="/blog">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-white"
-                >
-                  View All Articles <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div> */}
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        {/* <section className="py-20 bg-neutral-100">
-          <div className="container mx-auto px-4">
-            <h2 className="section-heading">Client Testimonials</h2>
-            <p className="section-subheading">Here's what people are saying about working with me</p>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} testimonial={testimonial} />
-              ))}
+        {/* 9. CTA */}
+        {/* <section className="py-12 bg-primary/5">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl font-semibold mb-4">Let’s build something together</h2>
+            <p className="text-neutral-700 mb-6">If you have a product, idea or community program, I’ll help you design it and ship it.</p>
+            <div className="flex justify-center gap-4">
+              <Link href="/contact" className="inline-block bg-primary text-white py-3 px-6 rounded-full">Hire Me</Link>
+              <Link href="/contact" className="inline-block border border-primary text-primary py-3 px-6 rounded-full">Contact Me</Link>
             </div>
           </div>
         </section> */}
-        {/* Testimonial Carousel Section */}
-        <TestimonialCarousel/>
 
-        {/* CTA Section */}
-        <section className="py-20 accent-gradient text-white relative">
-          {/* Large white shadow at the top */}
-          <div className="absolute top-0 left-0 w-full h-10 bg-white shadow-lg rounded-b-3xl opacity-80 blur-md"></div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-lg mb-10 max-w-2xl mx-auto">
-              Let's work together to bring your ideas to life. Contact me today to discuss your project.
-            </p>
-            <Link href="/contact">
-              <Button size="lg" className="bg-white text-primary-dark hover:bg-primary-dark hover:text-white rounded-full px-8">
-          Get in Touch
-              </Button>
-            </Link>
-          </div>
-        </section>
+        <CommunityCTA />
+
+        {/* 10. Footer */}
       </main>
     </div>
   )
